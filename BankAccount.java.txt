@@ -1,0 +1,48 @@
+import java.util.*;
+class BankAccount {
+    private int accountNumber;
+    private String holderName;
+    private int balance;
+    private int pin;
+
+    public BankAccount(int accountNumber, String holderName, int balance, int pin) {
+        this.accountNumber = accountNumber;
+        this.holderName = holderName;
+        this.balance = balance;
+        this.pin = pin;
+    }
+
+    // Getters
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public int getPin() {
+        return pin;
+    }
+
+    // Deposit
+    public void deposit(int amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount!");
+        }
+    }
+
+    // Withdraw
+    public void withdraw(int amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance or invalid amount!");
+        }
+    }
+
+    // Display Balance
+    public void displayBalance() {
+        System.out.println("Current Balance: " + balance);
+    }
+}
