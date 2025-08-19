@@ -2,17 +2,14 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter number of accounts: ");
         int n = sc.nextInt();
         BankAccount[] accounts = new BankAccount[n];
-
-        // ✅ Account creation happens here (under Main class)
         for (int i = 0; i < n; i++) {
             System.out.println("\nEnter details for account " + (i + 1) + ":");
             System.out.println("Account Number: ");
             int acc = sc.nextInt();
-            sc.nextLine(); // consume newline
+            sc.nextLine(); 
             System.out.println("Holder Name: ");
             String name = sc.nextLine();
             System.out.println("Initial Balance: ");
@@ -22,11 +19,8 @@ public class Main {
 
             accounts[i] = new BankAccount(acc, name, bal, pin);
         }
-
-        // Pass accounts to ATM
         ATM atm = new ATM(accounts, sc);
         atm.startATM();
-
-        sc.close();
     }
+
 }
