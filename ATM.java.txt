@@ -2,13 +2,10 @@ import java.util.*;
 class ATM {
     private BankAccount[] accounts;
     private Scanner sc;
-
     public ATM(BankAccount[] accounts, Scanner sc) {
         this.accounts = accounts;
         this.sc = sc;
     }
-
-    // Method to login
     private BankAccount login() {
         System.out.println("\nEnter Account Number: ");
         int accNo = sc.nextInt();
@@ -22,8 +19,6 @@ class ATM {
         }
         return null;
     }
-
-    // Show ATM menu
     public void startATM() {
         BankAccount account = login();
 
@@ -63,4 +58,5 @@ class ATM {
             }
         }
     }
+
 }
